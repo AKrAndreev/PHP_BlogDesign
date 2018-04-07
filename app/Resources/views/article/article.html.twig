@@ -1,0 +1,36 @@
+{% extends 'base.html.twig' %}
+
+{% block main %}
+    <div class="container body-content">
+        <div class="row">
+            <div class="col-md-12">
+                <article>
+                    <header>
+                        <h2>{{ article.title }}</h2>
+                    </header>
+                    <img src="{{ article.imgURL }}" class="img-responsive">
+                    <p>
+                        {{ article.content }}
+                    </p>
+
+                    <small class="author">
+                        {{ article.author }}
+                    </small>
+
+                    <footer>
+                        <div class="pull-left">
+                            <a class="btn btn-default btn-xs" href="{{ path('blog_index') }}">&laquo Back</a>
+                        </div>
+
+
+                        <div class="pull-right">
+                            <a class="btn btn-default btn-xs" href="{{ path('article_edit',{'id':article.id}) }}">Edit</a>
+                        </div>
+                    </footer>
+                </article>
+            </div>
+        </div>
+    </div>
+
+{% endblock %}
+
